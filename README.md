@@ -1,8 +1,11 @@
 # microservices-skeleton
-## Parent pom
-On our parent POM we will keep track of all the dependency versions and respective modules
 
+## Clean architecture
+### The goal of this project is to make Uncle Bob proud, eventually!
+
+![The new onion](docs/imgs/cleanArchitecture.png)
 
 ## Menu-service
-This module will provide a REST API for managing a restaurant menu
-TechStack: Springboot, SpringData JPA, PostgreSQL
+### Provides a REST API for managing a portuguese restaurant menu
+#### Disclaimer: It will only work if the restaurant is Portuguese
+**TechStack:** Springboot, SpringData JPA, PostgreSQL
