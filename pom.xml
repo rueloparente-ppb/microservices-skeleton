@@ -24,6 +24,7 @@
 
     <modules>
         <module>menu-service</module>
+        <module>order-service</module>
     </modules>
     <dependencies>
         <dependency>
