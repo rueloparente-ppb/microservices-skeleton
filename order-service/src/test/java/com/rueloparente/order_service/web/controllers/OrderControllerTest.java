@@ -1,11 +1,13 @@
 package com.rueloparente.order_service.web.controllers;
 
+import static com.rueloparente.order_service.web.controllers.WireMockDataFactory.mockGetProductByCode;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.notNullValue;
 
 import com.rueloparente.order_service.AbstractIT;
 import com.rueloparente.order_service.testdata.TestDataFactory;
 import io.restassured.http.ContentType;
+import java.math.BigDecimal;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,8 @@ class OrderControllerTest extends AbstractIT {
     class CreateOrderTests {
         @Test
         void shouldCreateOrderSucessfully() {
+            mockGetProductByCode("PROD123", "Wireless Mouse", BigDecimal.valueOf(25.99));
+            mockGetProductByCode("PROD456", "Mechanical Keyboard", BigDecimal.valueOf(89.99));
             var payload =
                     """
                             {
