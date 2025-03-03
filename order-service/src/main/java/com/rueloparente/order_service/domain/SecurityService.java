@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 public class SecurityService {
 
     public String getLoggedInUserName() {
-        return "rueloparente";
+        return "user";
     }
 }

@@ -1,6 +1,7 @@
 package com.rueloparente.order_service.domain;
 
 import com.rueloparente.order_service.dto.CreateOrderRequest;
+import com.rueloparente.order_service.dto.OrderDTO;
 import com.rueloparente.order_service.dto.OrderItemWeb;
 import com.rueloparente.order_service.value_objects.OrderStatus;
 import java.util.HashSet;
@@ -27,5 +28,27 @@ class OrderMapper {
         }
         newOrder.setItems(orderItems);
         return newOrder;
+    }
+
+    static OrderDTO convertToDTO(Order order) {
+        return new OrderDTO(
+                order.getOrderNumber(),
+                order.getUserName(),
+                convertToOrderItemWeb(order.getItems()),
+                order.getCustomer(),
+                order.getDeliveryAddress(),
+                order.getStatus(),
+                order.getComments(),
+                order.getCreatedAt());
+    }
+
+    static Set<OrderItemWeb> convertToOrderItemWeb(Set<OrderItem> items) {
+        Set<OrderItemWeb> orderItemWebs = new HashSet<>();
+        for (OrderItem orderItem : items) {
+            OrderItemWeb orderItemWeb = new OrderItemWeb(
+                    orderItem.getCode(), orderItem.getName(), orderItem.getPrice(), orderItem.getQuantity());
+            orderItemWebs.add(orderItemWeb);
+        }
+        return orderItemWebs;
     }
 }
