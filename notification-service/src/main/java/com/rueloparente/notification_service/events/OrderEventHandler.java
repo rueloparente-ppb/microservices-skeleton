@@ -36,5 +36,4 @@ public class OrderEventHandler {
     void handleOrderErrorEvent(OrderErrorEvent event) {
         notificationService.sendOrderErrorEventNotification(event);
     }
-
 }

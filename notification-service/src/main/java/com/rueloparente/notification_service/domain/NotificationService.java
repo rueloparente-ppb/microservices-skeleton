@@ -12,8 +12,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-
-//TODO: There is currently the risk of duplicated e-mail, we could implement a database where we would store the sent
+// TODO: There is currently the risk of duplicated e-mail, we could implement a database where we would store the sent
 // e-mails.
 @Service
 public class NotificationService {
