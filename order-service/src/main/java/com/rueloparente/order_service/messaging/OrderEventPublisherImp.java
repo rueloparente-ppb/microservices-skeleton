@@ -1,4 +1,4 @@
-package com.rueloparente.order_service.Messaging;
+package com.rueloparente.order_service.messaging;
 
 import com.rueloparente.order_service.ApplicationProperties;
 import com.rueloparente.order_service.domain.OrderEventPublisher;
